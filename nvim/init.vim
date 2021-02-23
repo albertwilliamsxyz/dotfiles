@@ -3,6 +3,7 @@ set nocompatible
 syntax enable
 
 filetype plugin on
+
 set omnifunc=syntaxcomplete#Complete
 
 set termguicolors
@@ -38,30 +39,12 @@ set splitbelow
 set undofile
 set undodir=~/.config/nvim/undodir
 
-call plug#begin()
-Plug 'fxn/vim-monochrome'
-Plug 'mattn/emmet-vim'
-call plug#end()
-
 let g:netrw_liststyle=3
 
-let g:python_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/bin/python3'
-
-let g:monochrome_italic_comments = 1
-
-let g:user_emmet_settings = {
-\  'javascript' : {
-\      'extends' : 'jsx',
-\  },
-\}
-
-colorscheme monochrome
+" let g:python_host_prog = '/usr/bin/python'
+" let g:python3_host_prog = '/usr/bin/python3'
 
 autocmd CompleteDone * pclose
-
-autocmd BufRead,BufNewFile *.note set filetype=""
-autocmd BufRead,BufNewFile *.todo set filetype=""
 
 augroup toggle_relative_number
 	autocmd InsertEnter * :setlocal norelativenumber
@@ -73,6 +56,3 @@ augroup c_files
 augroup END
 
 let mapleader = "\<Space>"
-nnoremap n nzz
-nnoremap N Nzz
-nnoremap <Leader><Space> I### <Esc>
